@@ -1,0 +1,25 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikealiaga/Employee-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikealiaga/Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/mikealiaga/Employee-Tracker#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "inquirer": "^12.4.1",
+    "pg": "^8.13.1"
+  }
+}
