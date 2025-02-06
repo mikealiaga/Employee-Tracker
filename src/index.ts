@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import pool from './db';
 
-// Function to display the main menu
+// Display the main menu
 const mainMenu = async (): Promise<void> => {
     try {
         const { action } = await inquirer.prompt([
@@ -56,7 +56,7 @@ const mainMenu = async (): Promise<void> => {
     }
 };
 
-// Function to view all departments
+// View all departments
 const viewDepartments = async (): Promise<void> => {
     try {
         const { rows } = await pool.query('SELECT * FROM department');
@@ -66,7 +66,7 @@ const viewDepartments = async (): Promise<void> => {
     }
 };
 
-// Function to view all roles
+// View all roles
 const viewRoles = async (): Promise<void> => {
     try {
         const { rows } = await pool.query(`
@@ -79,7 +79,7 @@ const viewRoles = async (): Promise<void> => {
     }
 };
 
-// Function to view all employees
+// View all employees
 const viewEmployees = async (): Promise<void> => {
     try {
         const { rows } = await pool.query(`
@@ -95,7 +95,7 @@ const viewEmployees = async (): Promise<void> => {
     }
 };
 
-// Function to add a new department
+// Aadd a new department
 const addDepartment = async (): Promise<void> => {
     try {
         const { name } = await inquirer.prompt([
@@ -113,7 +113,7 @@ const addDepartment = async (): Promise<void> => {
     }
 };
 
-// Function to add a new role
+// Add a new role
 const addRole = async (): Promise<void> => {
     try {
         const { rows: departments } = await pool.query('SELECT * FROM department');
@@ -146,7 +146,7 @@ const addRole = async (): Promise<void> => {
     }
 };
 
-// Function to add a new employee
+// Add a new employee
 const addEmployee = async (): Promise<void> => {
     try {
         const { rows: roles } = await pool.query('SELECT * FROM role');
@@ -181,7 +181,7 @@ const addEmployee = async (): Promise<void> => {
     }
 };
 
-// Function to update an employee's role
+// Update an employee's role
 const updateEmployeeRole = async (): Promise<void> => {
     try {
         const { rows: employees } = await pool.query('SELECT * FROM employee');
@@ -219,5 +219,4 @@ const updateEmployeeRole = async (): Promise<void> => {
     }
 };
 
-// Start the application
 mainMenu();
